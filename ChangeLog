@@ -1,0 +1,16 @@
+0.2.0
+----------------------
+* Fixed vorbis input...this was fixed by pretty much rewriting the existing vorbis input logic I had.
+  I am now using vorbisfile for all of it, and added a single pthread call as well...
+* I don't think 22kHz on input is working at this point (22kHz mono may work)...so if you can keep it to 44kHz then you'll
+  have the best results. but to be honest, you shouldn't really be transcoding with any source that's not 44kHz stereo, 
+  due to the major amount of artifacts that will probably be produced...
+
+0.1.3
+----------------------
+
+* fixed a problem with the resampling logic which caused major weirdness with anything other than 44kHz
+* if you changed the resampling settings but didn't restart the transcoder, then the new settings weren't being picked up..they are now.
+* upgraded to a new version of BASSWMA (yet unreleased, but included with the binary distribution) with support for WMA captions.. (yay!)
+* added a wait cursor
+

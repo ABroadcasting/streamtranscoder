@@ -1,0 +1,12 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+IDB_TAB_NORMAL          RCDATA  DISCARDABLE     "oc-unactive.png"
+IDB_TAB_HILITED         RCDATA  DISCARDABLE     "oc-hover.png"
+IDB_TAB_SELECTED        RCDATA  DISCARDABLE     "oc-active.png"
