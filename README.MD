@@ -1,182 +1,89 @@
-Basic Installation
-==================
+# Stream Transcoder
 
-   These are generic installation instructions.
 
-   The `configure' shell script attempts to guess correct values for
-various system-dependent variables used during compilation.  It uses
-those values to create a `Makefile' in each directory of the package.
-It may also create one or more `.h' files containing system-dependent
-definitions.  Finally, it creates a shell script `config.status' that
-you can run in the future to recreate the current configuration, a file
-`config.cache' that saves the results of its tests to speed up
-reconfiguring, and a file `config.log' containing compiler output
-(useful mainly for debugging `configure').
+## IMPORTANT NOTE:
 
-   If you need to do unusual things to compile the package, please try
-to figure out how `configure' could check whether to do them, and mail
-diffs or instructions to the address given in the `README' so they can
-be considered for the next release.  If at some point `config.cache'
-contains results you don't want to keep, you may remove or edit it.
+Until the configuration file is finalized, config files may not be
+compatable across releases.  If the streamTranscoder crashes on startup
+then it's most likely a cause of incompatable config files...So, if you have this
+problem, simply delete the transcoder.cfg from your application directory and re-run.
 
-   The file `configure.in' is used to create `configure' by a program
-called `autoconf'.  You only need `configure.in' if you want to change
-it or regenerate `configure' using a newer version of `autoconf'.
+## ANOTHER IMPORTANT NOTE:
 
-The simplest way to compile this package is:
 
-  1. `cd' to the directory containing the package's source code and type
-     `./configure' to configure the package for your system.  If you're
-     using `csh' on an old version of System V, you might need to type
-     `sh ./configure' instead to prevent `csh' from trying to execute
-     `configure' itself.
+Vorbis input is still not working properly...it will work for the first song, but screws up
+when a new vorbis bitstream is started...I will fix this, (eventually) but for now if you 
+have problems transcoding from Vorbis to anything then please keep this in mind.  
 
-     Running `configure' takes awhile.  While running, it prints some
-     messages telling which features it is checking for.
+Note that transcoding *TO* vorbis (from Mp3) does work, it's only on the *FROM* side that it does
+not.
 
-  2. Type `make' to compile the package.
 
-  3. Optionally, type `make check' to run any self-tests that come with
-     the package.
+## What is it ?
 
-  4. Type `make install' to install the programs and any data files and
-     documentation.
+The streamTranscoder is a multi-platform utility which can be used to transcode media streams from one format to another, and from one server type to another.
 
-  5. You can remove the program binaries and object files from the
-     source code directory by typing `make clean'.  To also remove the
-     files that `configure' created (so you can compile the package for
-     a different kind of computer), type `make distclean'.  There is
-     also a `make maintainer-clean' target, but that is intended mainly
-     for the package's developers.  If you use it, you may have to get
-     all sorts of other programs in order to regenerate files that came
-     with the distribution.
+streamTranscoder will read in streams of type MP3 and Vorbis from most servers (Icecast, Icecast2, Shoutcast) and convert it into  various formats and send to various streaming servers...
 
-Compilers and Options
-=====================
+The following is currently supported:
 
-   Some systems require unusual options for compilation or linking that
-the `configure' script does not know about.  You can give `configure'
-initial values for variables by setting them in the environment.  Using
-a Bourne-compatible shell, you can do that on the command line like
-this:
-     CC=c89 CFLAGS=-O2 LIBS=-lposix ./configure
+Input	MP3	Icecast
+Input	MP3	Shoutcast
+Input	Vorbis	Icecast2
+Input	MP3	Icecast2
 
-Or on systems that have the `env' program, you can do it like this:
-     env CPPFLAGS=-I/usr/local/include LDFLAGS=-s ./configure
+Output	MP3	Icecast
+Output	MP3	Shoutcast
+Output	MP3	Icecast2
+Output	Vorbis	Icecast2
+Output	WMA	WMA (Win32 only)
 
-Compiling For Multiple Architectures
-====================================
 
-   You can compile the package for more than one kind of computer at the
-same time, by placing the object files for each architecture in their
-own directory.  To do this, you must use a version of `make' that
-supports the `VPATH' variable, such as GNU `make'.  `cd' to the
-directory where you want the object files and executables to go and run
-the `configure' script.  `configure' automatically checks for the
-source code in the directory that `configure' is in and in `..'.
+In addition to being able to convert streaming formats, streamTranscoder
+has the ability to resample and also convert from stereo to mono and vice 
+versa.  So, it can be used to transcode a 160kbps/44100/Stereo MP3 Shoutcast
+stream into a Quality 0/32000/Mono Icecast2 Vorbis streams.
 
-   If you have to use a `make' that does not supports the `VPATH'
-variable, you have to compile the package for one architecture at a time
-in the source code directory.  After you have installed the package for
-one architecture, use `make distclean' before reconfiguring for another
-architecture.
+there are alot of combinations, and many way to mix and match, so please
+be creative.. :)
 
-Installation Names
-==================
+Building
+------------------------
 
-   By default, `make install' will install the package's files in
-`/usr/local/bin', `/usr/local/man', etc.  You can specify an
-installation prefix other than `/usr/local' by giving `configure' the
-option `--prefix=PATH'.
+On unix, only the command line program (streamTranscoder_CL) is built, to build
+other components run the following :
 
-   You can specify separate installation prefixes for
-architecture-specific files and architecture-independent files.  If you
-give `configure' the option `--exec-prefix=PATH', the package will use
-PATH as the prefix for installing programs and libraries.
-Documentation and other data files will still use the regular prefix.
+NCurses UI
 
-   In addition, if you use an unusual directory layout you can give
-options like `--bindir=PATH' to specify different values for particular
-kinds of files.  Run `configure --help' for a list of the directories
-you can set and what kinds of files go in them.
+    % make streamTranscoder_NUI
 
-   If the package supports it, you can cause programs to be installed
-with an extra prefix or suffix on their names by giving `configure' the
-option `--program-prefix=PREFIX' or `--program-suffix=SUFFIX'.
+WX Windows UI
 
-Optional Features
-=================
+    % make streamTranscoder_WX
 
-   Some packages pay attention to `--enable-FEATURE' options to
-`configure', where FEATURE indicates an optional part of the package.
-They may also pay attention to `--with-PACKAGE' options, where PACKAGE
-is something like `gnu-as' or `x' (for the X Window System).  The
-`README' should mention any `--enable-' and `--with-' options that the
-package recognizes.
 
-   For packages that use the X Window System, `configure' can usually
-find the X include and library files automatically, but if it doesn't,
-you can use the `configure' options `--x-includes=DIR' and
-`--x-libraries=DIR' to specify their locations.
+## Configuration
 
-Specifying the System Type
-==========================
+The configuration of the streamTranscoder is all contained within a single configuration file (transcoder.cfg). This file is created the first time the program is run, and should be edited manually before being used.  Each parameter contains a comment which describes the purpose
+of the configuration option.
 
-   There may be some features `configure' can not figure out
-automatically, but needs to determine by the type of host the package
-will run on.  Usually `configure' can figure that out, but if it prints
-a message saying it can not guess the host type, give it the
-`--host=TYPE' option.  TYPE can either be a short name for the system
-type, such as `sun4', or a canonical name with three fields:
-     CPU-COMPANY-SYSTEM
+## Platforms
 
-See the file `config.sub' for the possible values of each field.  If
-`config.sub' isn't included in this package, then this package doesn't
-need to know the host type.
+The streamTranscoder is available on many different platforms, both UI form and non UI form.  Currently, the following is available :
 
-   If you are building compiler tools for cross-compiling, you can also
-use the `--target=TYPE' option to select the type of system they will
-produce code for and the `--build=TYPE' option to select the type of
-system on which you are compiling the package.
+**streamTranscoder_console** - Console win32 command line
 
-Sharing Defaults
-================
+**streamTranscoder console** - Console unix command line
 
-   If you want to set default values for `configure' scripts to share,
-you can create a site shell script called `config.site' that gives
-default values for variables like `CC', `cache_file', and `prefix'.
-`configure' looks for `PREFIX/share/config.site' if it exists, then
-`PREFIX/etc/config.site' if it exists.  Or, you can set the
-`CONFIG_SITE' environment variable to the location of the site script.
-A warning: not all `configure' scripts look for a site script.
+**streamTranscoder text UI** - Unix ncurses UI
 
-Operation Controls
-==================
+**streamTranscoder UI**      - Unix wxWindows GUI
 
-   `configure' recognizes the following options to control how it
-operates.
+**streamTranscoder UI**      - win32 wxWindows GUI
 
-`--cache-file=FILE'
-     Use and save the results of the tests in FILE instead of
-     `./config.cache'.  Set FILE to `/dev/null' to disable caching, for
-     debugging `configure'.
 
-`--help'
-     Print a summary of the options to `configure', and exit.
+## Encoding with LAME
 
-`--quiet'
-`--silent'
-`-q'
-     Do not print messages saying which checks are being made.  To
-     suppress all normal output, redirect it to `/dev/null' (any error
-     messages will still be shown).
 
-`--srcdir=DIR'
-     Look for the package's source code in directory DIR.  Usually
-     `configure' can determine that directory automatically.
+MP3 encoding is supported using LAME only. Unfortunalely, legally I am unable to distribute LAME with this program.  In order to encode to MP3 you must find a copy of lame_enc.dll Dimitry Kutsanov runs a site which may help (http://mitiok.cjb.net)
 
-`--version'
-     Print the version of Autoconf used to generate the `configure'
-     script, and exit.
-
-`configure' also accepts some other, not widely useful, options.

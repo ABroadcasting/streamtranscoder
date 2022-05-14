@@ -2,19 +2,19 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 [Setup]
-AppName=Stream Transcoder Win32 V0.1.3
-AppVerName=streamTranscoder 0.1.3
-AppPublisherURL=http://transcoder.sourceforge.net
-AppSupportURL=http://transcoder.sourceforge.net
-AppUpdatesURL=http://transcoder.sourceforge.net
-DefaultDirName={pf}\StreamTranscoder
+AppName=Stream Transcoder
+AppVerName=0.3.0
+AppPublisherURL=https://sctools.cyou
+AppSupportURL=https://sctools.cyou
+AppUpdatesURL=https://sctools.cyou
+DefaultDirName={commonpf}\StreamTranscoder
 DefaultGroupName=Stream Transcoder
 AllowNoIcons=yes
-LicenseFile=..\COPYING
-InfoBeforeFile=..\README
-InfoAfterFile=..\Changelog
+LicenseFile=..\COPYING.MD
+InfoBeforeFile=..\README.MD
+InfoAfterFile=..\Changelog.MD
 OutputDir=.
-OutputBaseFilename=streamTranscoder_win32-0.1.3
+OutputBaseFilename=streamTranscoder-0.3.0
 WizardImageFile=st.bmp
 ; uncomment the following line if you want your installation to run on NT 3.51 too.
 ; MinVersion=4,3.51
