@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liboddcast", "liboddcast.vcxproj", "{9FFC33B9-8369-4192-9677-491A0C43215F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Debug|Win32.Build.0 = Debug|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Release|Win32.ActiveCfg = Release|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCE2A920-9A25-4B71-96FC-92F29F91CED7}
+	EndGlobalSection
+EndGlobal

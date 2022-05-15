@@ -4,9 +4,9 @@
 [Setup]
 AppName=Stream Transcoder
 AppVerName=0.3.0
-AppPublisherURL=https://sctools.cyou
-AppSupportURL=https://sctools.cyou
-AppUpdatesURL=https://sctools.cyou
+AppPublisherURL=https://sctools.cyou/redirect.php?soft=transcoder
+AppSupportURL=https://sctools.cyou/redirect.php?soft=transcoder
+AppUpdatesURL=https://sctools.cyou/redirect.php?soft=transcoderhttps://sctools.cyou
 DefaultDirName={commonpf}\StreamTranscoder
 DefaultGroupName=Stream Transcoder
 AllowNoIcons=yes
