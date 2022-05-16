@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "streamTranscoderUI", "streamTranscoderUI.vcxproj", "{4A3CFB3A-72E1-48D9-8C9A-36D52177754C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liboddcast", "win32\liboddcast.vcxproj", "{9FFC33B9-8369-4192-9677-491A0C43215F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liboddcast_config", "win32\liboddcast_config.vcxproj", "{10D8B16E-851D-4435-AB6B-E90F209155FF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtranscoder", "win32\libtranscoder.vcxproj", "{F2BA6C85-5A19-4477-BC37-FA6872C6F8EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A3CFB3A-72E1-48D9-8C9A-36D52177754C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A3CFB3A-72E1-48D9-8C9A-36D52177754C}.Debug|Win32.Build.0 = Debug|Win32
+		{4A3CFB3A-72E1-48D9-8C9A-36D52177754C}.Release|Win32.ActiveCfg = Release|Win32
+		{4A3CFB3A-72E1-48D9-8C9A-36D52177754C}.Release|Win32.Build.0 = Release|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Debug|Win32.Build.0 = Debug|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Release|Win32.ActiveCfg = Release|Win32
+		{9FFC33B9-8369-4192-9677-491A0C43215F}.Release|Win32.Build.0 = Release|Win32
+		{10D8B16E-851D-4435-AB6B-E90F209155FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{10D8B16E-851D-4435-AB6B-E90F209155FF}.Debug|Win32.Build.0 = Debug|Win32
+		{10D8B16E-851D-4435-AB6B-E90F209155FF}.Release|Win32.ActiveCfg = Release|Win32
+		{10D8B16E-851D-4435-AB6B-E90F209155FF}.Release|Win32.Build.0 = Release|Win32
+		{F2BA6C85-5A19-4477-BC37-FA6872C6F8EA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F2BA6C85-5A19-4477-BC37-FA6872C6F8EA}.Debug|Win32.Build.0 = Debug|Win32
+		{F2BA6C85-5A19-4477-BC37-FA6872C6F8EA}.Release|Win32.ActiveCfg = Release|Win32
+		{F2BA6C85-5A19-4477-BC37-FA6872C6F8EA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47D8BF62-F739-4986-B239-ABCE4C05BB42}
+	EndGlobalSection
+EndGlobal
